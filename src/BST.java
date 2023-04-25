@@ -11,22 +11,10 @@ public class BST {
         tree.insert(30);
         tree.insert(300);
         tree.insert(150);
+       tree.printTree();
 
-
-        tree.traverseInOrder();
-        tree.traversePreOrder();
-        tree.traversePostOrder();
-
-
-
-        tree.getMinimum();
         tree.breadthFirstSearch();
         tree.depthFirstSearch();
-
-
-        tree.getHeight();
-        tree.closestValue(126);
-        tree.isValidBst();
     }
 
     }
@@ -314,10 +302,10 @@ public class BST {
             if(root == null)
                 return root;
             if(val < root.value){
-                root = delete(root.left, val);
+                root.left = delete(root.left, val);
             }
             else{
-                root = delete(root.right, val);
+                root.right = delete(root.right, val);
             }
             if(root.value == val){
                 //case 1 - no children
